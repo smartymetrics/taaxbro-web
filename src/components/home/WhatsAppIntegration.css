@@ -70,6 +70,7 @@
 .wa-name {
   font-weight: 600;
   font-size: 14px;
+  color: var(--color-fixed-white);
 }
 
 .wa-status {
@@ -120,7 +121,7 @@
 
 .wa-time {
   font-size: 10px;
-  color: rgba(255, 255, 255, 0.4);
+  color: rgba(255, 255, 255, 0.6);
   display: block;
   text-align: right;
   margin-top: 4px;

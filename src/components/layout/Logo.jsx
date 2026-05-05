@@ -8,27 +8,29 @@ const Logo = ({ variant = 'dark', className = '' }) => {
       <img 
         src="/favicon.jpg" 
         alt="Taaxbro Logo" 
-        style={{ width: '40px', height: '40px', borderRadius: '8px', objectFit: 'cover' }} 
+        style={{ width: '40px', height: '40px', borderRadius: '50%', objectFit: 'cover' }} 
       />
       <div style={{ display: 'flex', flexDirection: 'column' }}>
         <span style={{ 
           fontFamily: "'Plus Jakarta Sans', sans-serif", 
-          fontSize: '24px', 
+          fontSize: '26px', 
           fontWeight: '800', 
           color: isLight ? 'var(--color-fixed-white)' : 'var(--color-text-primary)',
+          letterSpacing: '-0.02em',
           lineHeight: '1'
         }}>
-          Taax<span style={{ color: 'var(--color-cyan)' }}>b</span>ro
+          Taa<span style={{ color: 'var(--color-blue-primary)', position: 'relative' }}>x</span>bro
         </span>
         <span style={{ 
-          fontSize: '7px', 
-          fontWeight: '700', 
-          letterSpacing: '0.15em', 
+          fontSize: '6.5px', 
+          fontWeight: '800', 
+          letterSpacing: '0.08em', 
           color: isLight ? 'rgba(255,255,255,0.8)' : 'var(--color-mid-grey)',
-          marginTop: '2px',
-          textTransform: 'uppercase'
+          marginTop: '4px',
+          textTransform: 'uppercase',
+          whiteSpace: 'nowrap'
         }}>
-          AI-Driven Compliance
+          AI DRIVEN TAX COMPLIANCE & PAYMENTS
         </span>
       </div>
     </div>

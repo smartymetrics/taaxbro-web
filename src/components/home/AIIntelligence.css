@@ -83,6 +83,7 @@
 .chat-name {
   font-weight: 600;
   font-size: var(--text-base);
+  color: var(--color-fixed-white);
 }
 
 .chat-status {
@@ -127,15 +128,15 @@
 }
 
 .ai .message-bubble {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.12);
   color: var(--color-fixed-white);
   border-bottom-left-radius: 4px;
 }
 
 .chat-input {
   padding: 16px 20px;
-  background: rgba(255, 255, 255, 0.05);
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.07);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
   font-size: var(--text-sm);
-  color: rgba(255, 255, 255, 0.4);
+  color: rgba(255, 255, 255, 0.8);
 }
