@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { FacebookLogo, TwitterLogo, LinkedinLogo, InstagramLogo } from 'phosphor-react';
 import Logo from './Logo';
 import './Footer.css';
@@ -14,43 +15,41 @@ const Footer = () => {
               The intelligent financial operating system for Nigerian businesses. Payments, compliance, and bookkeeping in one place.
             </p>
             <div className="social-links">
-              <a href="#" className="social-icon"><FacebookLogo weight="fill" /></a>
-              <a href="#" className="social-icon"><TwitterLogo weight="fill" /></a>
-              <a href="#" className="social-icon"><LinkedinLogo weight="fill" /></a>
-              <a href="#" className="social-icon"><InstagramLogo weight="fill" /></a>
+              <a href="https://facebook.com/taaxbro" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="Facebook"><FacebookLogo weight="fill" /></a>
+              <a href="https://x.com/taaxbro" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="X (Twitter)"><TwitterLogo weight="fill" /></a>
+              <a href="https://www.linkedin.com/company/taaxbro" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="LinkedIn"><LinkedinLogo weight="fill" /></a>
+              <a href="https://www.instagram.com/taaxbro" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="Instagram"><InstagramLogo weight="fill" /></a>
             </div>
           </div>
 
           <div className="footer-col">
             <h4 className="footer-title">PRODUCT</h4>
             <ul className="footer-links">
-              <li><a href="#">Taaxbro Pay</a></li>
-              <li><a href="#">Taaxbro Tax</a></li>
-              <li><a href="#">Taaxbro Books</a></li>
-              <li><a href="#">Accountant Portal</a></li>
-              <li><a href="#">Integrations</a></li>
+              <li><Link to="/product#payments">Taaxbro Pay</Link></li>
+              <li><Link to="/product#tax">Taaxbro Tax</Link></li>
+              <li><Link to="/product#accounting">Taaxbro Books</Link></li>
+              <li><Link to="/accountants">Accountant Portal</Link></li>
+              <li><Link to="/product#compliance">Compliance</Link></li>
             </ul>
           </div>
 
           <div className="footer-col">
             <h4 className="footer-title">RESOURCES</h4>
             <ul className="footer-links">
-              <li><a href="#">Blog</a></li>
-              <li><a href="#">Tax Calendar 2025</a></li>
-              <li><a href="#">VAT Verification</a></li>
-              <li><a href="#">Help Centre</a></li>
-              <li><a href="#">API Docs</a></li>
+              <li><Link to="/blog">Blog</Link></li>
+              <li><Link to="/faq">Help Centre</Link></li>
+              <li><Link to="/legal">Privacy Policy</Link></li>
+              <li><Link to="/legal">Terms of Service</Link></li>
             </ul>
           </div>
 
           <div className="footer-col">
             <h4 className="footer-title">COMPANY</h4>
             <ul className="footer-links">
-              <li><a href="#">About Us</a></li>
-              <li><a href="#">Careers</a></li>
-              <li><a href="#">Contact</a></li>
-              <li><a href="#">Privacy Policy</a></li>
-              <li><a href="#">Terms of Service</a></li>
+              <li><Link to="/about">About Us</Link></li>
+              <li><Link to="/about#team">The Team</Link></li>
+              <li><Link to="/login">Client Login</Link></li>
+              <li><Link to="/signup">Get Started</Link></li>
             </ul>
           </div>
         </div>

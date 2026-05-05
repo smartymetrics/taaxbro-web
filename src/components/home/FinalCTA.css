@@ -4,7 +4,7 @@
   position: relative;
   overflow: hidden;
   text-align: center;
-  color: white;
+  color: var(--color-fixed-white);
 }
 
 .cta-container {
@@ -16,11 +16,12 @@
   font-size: var(--text-5xl);
   font-weight: 800;
   margin-bottom: 24px;
+  color: var(--color-fixed-white) !important;
 }
 
 .cta-subheadline {
   font-size: var(--text-lg);
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.85);
   max-width: 600px;
   margin: 0 auto 48px;
 }
@@ -45,7 +46,7 @@
 
 .cta-footer {
   font-size: var(--text-sm);
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.6);
 }
 
 .particle {

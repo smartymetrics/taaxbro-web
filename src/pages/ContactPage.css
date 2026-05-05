@@ -45,6 +45,17 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  border: 1.5px solid var(--color-light-grey);
+}
+
+[data-theme="dark"] .info-icon {
+  background: #111827;
+  border-color: rgba(255,255,255,0.1);
+}
+
+[data-theme="warm"] .info-icon {
+  background: #F2EBE0;
+  border-color: #E0D3C0;
 }
 
 .info-text {

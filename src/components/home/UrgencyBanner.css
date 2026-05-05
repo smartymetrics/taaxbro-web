@@ -1,7 +1,7 @@
 .urgency-banner {
   background: linear-gradient(90deg, #C2410C 0%, #D97706 100%);
   padding: 20px 0;
-  color: var(--color-white);
+  color: var(--color-fixed-white);
   z-index: 10;
   position: relative;
 }

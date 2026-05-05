@@ -30,7 +30,7 @@
 .legal-content-card p {
   font-size: var(--text-base);
   line-height: 1.7;
-  color: var(--color-text-secondary);
+  color: var(--color-dark-grey);
   margin-bottom: 24px;
 }
 

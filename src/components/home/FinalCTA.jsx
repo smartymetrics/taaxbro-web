@@ -32,7 +32,7 @@ const FinalCTA = () => {
       ))}
 
       <div className="container cta-container">
-        <h2 className="cta-headline">
+        <h2 className="cta-headline white">
           Your business. Fully compliant. <br />
           <span className="text-gradient">Fully in control.</span>
         </h2>
@@ -50,7 +50,7 @@ const FinalCTA = () => {
         </div>
         
         <p className="cta-footer">
-          Free trial · No credit card required · Setup in under an hour
+          Free trial · No credit card required · Setup in under 35 minutes
         </p>
       </div>
     </section>
