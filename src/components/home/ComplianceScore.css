@@ -60,11 +60,12 @@
   font-size: var(--text-3xl);
   font-weight: 700;
   margin-bottom: 24px;
+  color: var(--color-fixed-white) !important;
 }
 
 .explanation-body {
   font-size: var(--text-base);
-  color: rgba(255, 255, 255, 0.75);
+  color: rgba(255, 255, 255, 0.85);
   margin-bottom: 32px;
   line-height: 1.7;
 }

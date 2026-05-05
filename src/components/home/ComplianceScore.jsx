@@ -92,7 +92,7 @@ const ComplianceScore = () => {
           </div>
 
           <div className="score-explanation">
-            <h3 className="explanation-heading">Your compliance, measured and managed.</h3>
+            <h3 className="explanation-heading white">Your compliance, measured and managed.</h3>
             <p className="explanation-body">
               Taaxbro calculates a real-time 0–100 score that reflects your complete tax compliance posture. The score considers five factors and updates automatically as your data changes.
             </p>
