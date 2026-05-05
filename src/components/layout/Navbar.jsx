@@ -44,7 +44,7 @@ const Navbar = () => {
 
         <div className="nav-links desktop-only">
           <div className="nav-item-with-dropdown">
-            <Link to="/product" className={navLinkClass}>Product</Link>
+            <Link to="/product" className={`${navLinkClass} ${location.pathname.startsWith('/product') ? 'active' : ''}`}>Product</Link>
             <div className="nav-dropdown">
               <Link to="/product#payments" className="dropdown-item">Payments</Link>
               <Link to="/product#tax" className="dropdown-item">Tax Compliance</Link>
@@ -54,10 +54,10 @@ const Navbar = () => {
               <Link to="/product#whatsapp" className="dropdown-item">WhatsApp Integration</Link>
             </div>
           </div>
-          <Link to="/pricing" className={navLinkClass}>Pricing</Link>
-          <Link to="/accountants" className={navLinkClass}>For Accountants</Link>
-          <Link to="/blog" className={navLinkClass}>Blog</Link>
-          <Link to="/about" className={navLinkClass}>About</Link>
+          <Link to="/pricing" className={`${navLinkClass} ${location.pathname === '/pricing' ? 'active' : ''}`}>Pricing</Link>
+          <Link to="/accountants" className={`${navLinkClass} ${location.pathname === '/accountants' ? 'active' : ''}`}>For Accountants</Link>
+          <Link to="/blog" className={`${navLinkClass} ${location.pathname === '/blog' ? 'active' : ''}`}>Blog</Link>
+          <Link to="/about" className={`${navLinkClass} ${location.pathname === '/about' ? 'active' : ''}`}>About</Link>
         </div>
 
         <div className="nav-actions desktop-only">

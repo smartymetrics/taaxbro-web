@@ -35,7 +35,7 @@ const AboutPage = () => {
       <section className="mission-section">
         <div className="container">
           <ScrollReveal>
-            <h1 className="mission-statement">
+            <h1 className="mission-statement white">
               Taaxbro exists to give every African business owner the financial infrastructure that was previously only available to large corporations — <span className="text-gradient">intelligent, automated, and built for the continent.</span>
             </h1>
           </ScrollReveal>

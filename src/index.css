@@ -216,6 +216,8 @@
 
 /* Dark sections stay dark with subtle warm tint */
 [data-theme="warm"] .hero,
+[data-theme="warm"] .mission-section,
+[data-theme="warm"] .accountant-hero,
 [data-theme="warm"] .ai-intelligence,
 [data-theme="warm"] .compliance-score,
 [data-theme="warm"] .final-cta,
@@ -240,6 +242,36 @@
 
 [data-theme="warm"] .solution-pillars {
   background: var(--color-white);
+}
+
+/* ── WARM MODE — inner page surfaces ── */
+
+/* Features page sticky nav */
+[data-theme="warm"] .sticky-nav {
+  background: var(--color-off-white);
+  border-bottom-color: #E0D3C0;
+}
+
+/* FAQ category sticky nav */
+[data-theme="warm"] .faq-category-nav {
+  background: var(--color-off-white);
+  border-bottom-color: #E0D3C0;
+}
+
+/* Legal page content card */
+[data-theme="warm"] .legal-content-card {
+  background: #FAF6EF;
+  border-color: #E0D3C0;
+}
+
+/* Pricing table category rows */
+[data-theme="warm"] .comparison-table .category-row td {
+  background: #F2EBE0;
+}
+
+/* Pricing table row hover */
+[data-theme="warm"] .comparison-table tr:hover td {
+  background: #F2EBE0;
 }
 
 * {

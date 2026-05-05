@@ -25,6 +25,8 @@
   font-size: var(--text-base);
   box-shadow: var(--shadow-sm);
   transition: all 0.2s;
+  background: var(--color-white);
+  color: var(--color-text-primary);
 }
 
 .faq-search-input:focus {
@@ -35,10 +37,32 @@
 
 .faq-category-nav {
   border-bottom: 1px solid var(--color-light-grey);
-  background: white;
+  background: var(--color-white);
   position: sticky;
   top: 72px;
   z-index: 10;
+}
+
+[data-theme="dark"] .faq-category-nav {
+  background: var(--color-off-white);
+  border-bottom-color: rgba(255,255,255,0.08);
+}
+
+[data-theme="warm"] .faq-category-nav {
+  background: var(--color-off-white);
+  border-bottom-color: #E0D3C0;
+}
+
+[data-theme="dark"] .faq-search-input {
+  background: #212840;
+  color: #FFFFFF;
+  border-color: rgba(255,255,255,0.15);
+}
+
+[data-theme="warm"] .faq-search-input {
+  background: #FAF6EF;
+  color: #2D1F0E;
+  border-color: #D4C4AB;
 }
 
 .category-tabs {

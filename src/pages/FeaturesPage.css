@@ -7,10 +7,14 @@
 .sticky-nav {
   position: sticky;
   top: 72px; /* Navbar height */
-  background: white;
+  background: var(--color-white);
   z-index: 900;
   box-shadow: var(--shadow-sm);
   border-bottom: 1px solid var(--color-light-grey);
+}
+
+[data-theme="warm"] .sticky-nav {
+  border-bottom-color: #E0D3C0;
 }
 
 @media (max-width: 767px) {
