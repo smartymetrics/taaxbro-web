@@ -43,7 +43,17 @@ const Navbar = () => {
         </Link>
 
         <div className="nav-links desktop-only">
-          <Link to="/product" className={navLinkClass}>Product</Link>
+          <div className="nav-item-with-dropdown">
+            <Link to="/product" className={navLinkClass}>Product</Link>
+            <div className="nav-dropdown">
+              <Link to="/product#payments" className="dropdown-item">Payments</Link>
+              <Link to="/product#tax" className="dropdown-item">Tax Compliance</Link>
+              <Link to="/product#accounting" className="dropdown-item">Accounting</Link>
+              <Link to="/product#compliance" className="dropdown-item">Compliance</Link>
+              <Link to="/product#ocr" className="dropdown-item">OCR Technology</Link>
+              <Link to="/product#whatsapp" className="dropdown-item">WhatsApp Integration</Link>
+            </div>
+          </div>
           <Link to="/pricing" className={navLinkClass}>Pricing</Link>
           <Link to="/accountants" className={navLinkClass}>For Accountants</Link>
           <Link to="/blog" className={navLinkClass}>Blog</Link>
@@ -79,7 +89,15 @@ const Navbar = () => {
           </button>
         </div>
         <div className="drawer-links">
-          <Link to="/product" className="drawer-link" onClick={toggleMenu}>Product</Link>
+          <div className="drawer-group">
+            <div className="drawer-group-title">Products</div>
+            <Link to="/product#payments" className="drawer-link-sub" onClick={toggleMenu}>Payments</Link>
+            <Link to="/product#tax" className="drawer-link-sub" onClick={toggleMenu}>Tax Compliance</Link>
+            <Link to="/product#accounting" className="drawer-link-sub" onClick={toggleMenu}>Accounting</Link>
+            <Link to="/product#compliance" className="drawer-link-sub" onClick={toggleMenu}>Compliance</Link>
+            <Link to="/product#ocr" className="drawer-link-sub" onClick={toggleMenu}>OCR Technology</Link>
+            <Link to="/product#whatsapp" className="drawer-link-sub" onClick={toggleMenu}>WhatsApp Integration</Link>
+          </div>
           <Link to="/pricing" className="drawer-link" onClick={toggleMenu}>Pricing</Link>
           <Link to="/accountants" className="drawer-link" onClick={toggleMenu}>For Accountants</Link>
           <Link to="/blog" className="drawer-link" onClick={toggleMenu}>Blog</Link>

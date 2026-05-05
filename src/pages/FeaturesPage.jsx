@@ -85,8 +85,63 @@ const FeaturesPage = () => {
         { icon: FileText, title: "Tax Clearance", desc: "Generate data for your TCC applications without the stress." },
         { icon: FileText, title: "Audit-Ready Logs", desc: "Every filing is backed by a complete transaction audit trail." }
       ]
+    },
+    accounting: {
+      label: "ACCOUNTING",
+      title: "Taaxbro Books: Professional accounting, minus the accountant.",
+      subtitle: "From professional invoicing to instant P&L statements, manage your entire business finances with zero accounting knowledge.",
+      icon: BookOpen,
+      cards: [
+        { icon: BookOpen, title: "Professional Invoicing", desc: "Generate standard or QR-code invoices in under a minute." },
+        { icon: BookOpen, title: "Real-Time Bookkeeping", desc: "Your books update automatically as you spend and earn." },
+        { icon: BookOpen, title: "Instant P&L Reports", desc: "View your Profit & Loss and Balance Sheet with one click." },
+        { icon: BookOpen, title: "Expense Tracking", desc: "Categorise every Naira spent to understand your overheads." },
+        { icon: BookOpen, title: "Inventory Management", desc: "Basic tracking of stock levels and cost of goods sold." },
+        { icon: BookOpen, title: "Multi-Currency Support", desc: "Record transactions in Naira, Dollars, or Pounds with ease." }
+      ]
+    },
+    compliance: {
+      label: "COMPLIANCE",
+      title: "Stay protected with AI-driven compliance monitoring.",
+      subtitle: "Taaxbro doesn't just record data — it watches your back. Our AI detects risks and keeps your compliance score high.",
+      icon: ShieldCheck,
+      cards: [
+        { icon: ShieldCheck, title: "Compliance Score", desc: "A real-time health metric of your business standing with tax authorities." },
+        { icon: ShieldCheck, title: "Anomaly Detection", desc: "Early warnings for reporting patterns that might trigger audits." },
+        { icon: ShieldCheck, title: "Deadline Calendar", desc: "A unified view of every tax, filing, and renewal deadline." },
+        { icon: ShieldCheck, title: "Law-Referenced Answers", desc: "Get tax answers based on the current Nigerian Tax Act 2025." },
+        { icon: ShieldCheck, title: "TCC Support", desc: "Pre-verified data for Tax Clearance Certificate applications." },
+        { icon: ShieldCheck, title: "Audit Trail", desc: "Immutable logs of every transaction and filing action taken." }
+      ]
+    },
+    ocr: {
+      label: "OCR TECHNOLOGY",
+      title: "Photograph any receipt. Taaxbro does the rest.",
+      subtitle: "Eliminate manual data entry. Our high-precision OCR technology reads and records your financial documents instantly.",
+      icon: Camera,
+      cards: [
+        { icon: Camera, title: "Receipt Scanning", desc: "Take a photo of any receipt and watch it turn into an expense entry." },
+        { icon: Camera, title: "VAT Verification", desc: "Instantly check if you were overcharged VAT at the till." },
+        { icon: Camera, title: "Bulk Upload", desc: "Drag and drop 50 invoices and let Taaxbro process them in parallel." },
+        { icon: Camera, title: "Language Support", desc: "Reads diverse formats from Nigerian vendors and contractors." },
+        { icon: Camera, title: "Auto-Categorisation", desc: "AI identifies the expense type based on the items listed." },
+        { icon: Camera, title: "Cloud Storage", desc: "Searchable digital archive of all your physical paper trails." }
+      ]
+    },
+    whatsapp: {
+      label: "WHATSAPP INTEGRATION",
+      title: "Taaxbro lives inside the app you use every day.",
+      subtitle: "No new habits to build. Send receipts, ask tax questions, and get payment alerts directly on WhatsApp.",
+      icon: WhatsappLogo,
+      cards: [
+        { icon: WhatsappLogo, title: "Instant Payment Alerts", desc: "Get notified the moment a customer pays into your accounts." },
+        { icon: WhatsappLogo, title: "WhatsApp Invoicing", desc: "Send professional invoices to clients without leaving the chat." },
+        { icon: WhatsappLogo, title: "AI Tax Q&A", desc: "Ask 'Do I charge VAT on this?' and get an instant answer." },
+        { icon: WhatsappLogo, title: "Receipt Submission", desc: "Snap and send a photo to record an expense instantly." },
+        { icon: WhatsappLogo, title: "Deadline Reminders", desc: "Get proactive alerts for upcoming tax filings in your DMs." },
+        { icon: WhatsappLogo, title: "Voice Support", desc: "Ask questions via voice notes and get text/voice responses." }
+      ]
     }
-    // ... more modules can be added following same pattern
   };
 
   const scrollTo = (id) => {
@@ -145,10 +200,24 @@ const FeaturesPage = () => {
           {...featuresData.tax} 
           reverse={true}
         />
-        {/* Placeholder for other sections */}
-        <section className="section-padding" style={{ textAlign: 'center' }}>
-          <p className="white-70">More feature modules coming soon...</p>
-        </section>
+        <FeatureSection 
+          id="accounting" 
+          {...featuresData.accounting} 
+        />
+        <FeatureSection 
+          id="compliance" 
+          {...featuresData.compliance} 
+          reverse={true}
+        />
+        <FeatureSection 
+          id="ocr" 
+          {...featuresData.ocr} 
+        />
+        <FeatureSection 
+          id="whatsapp" 
+          {...featuresData.whatsapp} 
+          reverse={true}
+        />
       </main>
 
       <Footer />

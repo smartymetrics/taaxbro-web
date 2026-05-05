@@ -233,6 +233,7 @@
 [data-theme="warm"] .testimonials,
 [data-theme="warm"] .pricing-teaser,
 [data-theme="warm"] .faq-teaser,
+[data-theme="warm"] .sticky-nav,
 [data-theme="warm"] .for-accountants {
   background-color: var(--color-off-white);
 }
