@@ -15,16 +15,16 @@ const Logo = ({ variant = 'dark', className = '' }) => {
           fontFamily: "'Plus Jakarta Sans', sans-serif", 
           fontSize: '24px', 
           fontWeight: '800', 
-          color: isLight ? '#FFFFFF' : '#0D1B4B',
+          color: isLight ? 'var(--color-fixed-white)' : 'var(--color-text-primary)',
           lineHeight: '1'
         }}>
-          Taax<span style={{ color: '#22D3EE' }}>b</span>ro
+          Taax<span style={{ color: 'var(--color-cyan)' }}>b</span>ro
         </span>
         <span style={{ 
           fontSize: '7px', 
           fontWeight: '700', 
           letterSpacing: '0.15em', 
-          color: isLight ? 'rgba(255,255,255,0.8)' : 'rgba(13,27,75,0.7)',
+          color: isLight ? 'rgba(255,255,255,0.8)' : 'var(--color-mid-grey)',
           marginTop: '2px',
           textTransform: 'uppercase'
         }}>

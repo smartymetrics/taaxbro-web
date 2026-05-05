@@ -1,4 +1,5 @@
 import React from 'react';
+import ScrollReveal from '../common/ScrollReveal';
 import './Testimonials.css';
 
 const TestimonialCard = ({ quote, author, business, rating = 5 }) => (
@@ -41,31 +42,37 @@ const Testimonials = () => {
   return (
     <section className="testimonials section-padding">
       <div className="container">
-        <div className="section-header">
-          <span className="eyebrow eyebrow-light">TRUSTED BY BUSINESSES</span>
-          <h2 className="section-title">What Nigerian business owners are saying.</h2>
-        </div>
+        <ScrollReveal>
+          <div className="section-header">
+            <span className="eyebrow eyebrow-light">TRUSTED BY BUSINESSES</span>
+            <h2 className="section-title">What Nigerian business owners are saying.</h2>
+          </div>
+        </ScrollReveal>
 
         <div className="testimonial-grid">
           {testimonials.map((t, i) => (
-            <TestimonialCard key={i} {...t} />
+            <ScrollReveal key={i} delay={i * 0.1}>
+              <TestimonialCard {...t} />
+            </ScrollReveal>
           ))}
         </div>
 
-        <div className="metrics-strip card-stat">
-          <div className="metric-item">
-            <span className="metric-number text-gradient">12,000+</span>
-            <span className="metric-label">Businesses Served</span>
+        <ScrollReveal delay={0.4}>
+          <div className="metrics-strip card-stat">
+            <div className="metric-item">
+              <span className="metric-number text-gradient">12,000+</span>
+              <span className="metric-label">Businesses Served</span>
+            </div>
+            <div className="metric-item">
+              <span className="metric-number text-gradient">₦8B+</span>
+              <span className="metric-label">Tax Filed Successfully</span>
+            </div>
+            <div className="metric-item">
+              <span className="metric-number text-gradient">18hrs</span>
+              <span className="metric-label">Avg. Hours Saved Monthly</span>
+            </div>
           </div>
-          <div className="metric-item">
-            <span className="metric-number text-gradient">₦8B+</span>
-            <span className="metric-label">Tax Filed Successfully</span>
-          </div>
-          <div className="metric-item">
-            <span className="metric-number text-gradient">18hrs</span>
-            <span className="metric-label">Avg. Hours Saved Monthly</span>
-          </div>
-        </div>
+        </ScrollReveal>
       </div>
     </section>
   );

@@ -1,5 +1,6 @@
 import React from 'react';
 import { LinkSimple, MagicWand, ChartLineUp, CheckCircle } from 'phosphor-react';
+import ScrollReveal from '../common/ScrollReveal';
 import './HowItWorks.css';
 
 const Step = ({ number, icon: Icon, title, body }) => (
@@ -46,15 +47,19 @@ const HowItWorks = () => {
   return (
     <section className="how-it-works section-padding">
       <div className="container">
-        <div className="section-header">
-          <span className="eyebrow eyebrow-light">GET STARTED</span>
-          <h2 className="section-title">Up and running in one afternoon.</h2>
-        </div>
+        <ScrollReveal>
+          <div className="section-header">
+            <span className="eyebrow eyebrow-light">GET STARTED</span>
+            <h2 className="section-title">Up and running in one afternoon.</h2>
+          </div>
+        </ScrollReveal>
 
         <div className="steps-grid">
           <div className="steps-line desktop-only"></div>
           {steps.map((step, i) => (
-            <Step key={i} {...step} />
+            <ScrollReveal key={i} delay={i * 0.1}>
+              <Step {...step} />
+            </ScrollReveal>
           ))}
         </div>
       </div>

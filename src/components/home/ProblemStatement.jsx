@@ -1,5 +1,6 @@
 import React from 'react';
 import { Clock, Warning, ArrowsLeftRight, CurrencyNgn } from 'phosphor-react';
+import ScrollReveal from '../common/ScrollReveal';
 import './ProblemStatement.css';
 
 const ProblemCard = ({ icon: Icon, title, body, accentColor }) => (
@@ -43,14 +44,18 @@ const ProblemStatement = () => {
   return (
     <section className="problem-statement section-padding">
       <div className="container">
-        <div className="section-header">
-          <span className="eyebrow eyebrow-light">THE CHALLENGE</span>
-          <h2 className="section-title">Running a business in Nigeria is hard enough without tax chaos.</h2>
-        </div>
+        <ScrollReveal>
+          <div className="section-header">
+            <span className="eyebrow eyebrow-light">THE CHALLENGE</span>
+            <h2 className="section-title">Running a business in Nigeria is hard enough without tax chaos.</h2>
+          </div>
+        </ScrollReveal>
         
         <div className="problem-grid">
           {problems.map((problem, index) => (
-            <ProblemCard key={index} {...problem} />
+            <ScrollReveal key={index} delay={index * 0.1}>
+              <ProblemCard {...problem} />
+            </ScrollReveal>
           ))}
         </div>
       </div>

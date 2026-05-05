@@ -9,6 +9,9 @@ const Pricing = lazy(() => import('./pages/PricingPage'));
 const FAQ = lazy(() => import('./pages/FAQPage'));
 const About = lazy(() => import('./pages/AboutPage'));
 const Contact = lazy(() => import('./pages/ContactPage'));
+const Blog = lazy(() => import('./pages/BlogPage'));
+const Accountants = lazy(() => import('./pages/AccountantsPage'));
+const Legal = lazy(() => import('./pages/LegalPage'));
 
 // Placeholder components for other pages
 const PlaceholderPage = ({ title }) => (
@@ -19,8 +22,6 @@ const PlaceholderPage = ({ title }) => (
   </div>
 );
 
-const Accountants = () => <PlaceholderPage title="Accountant Portal" />;
-const Blog = () => <PlaceholderPage title="Taaxbro Blog" />;
 const Login = () => <PlaceholderPage title="Login" />;
 
 function App() {
@@ -36,6 +37,8 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/accountants" element={<Accountants />} />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/terms" element={<Legal title="Terms of Service" />} />
+          <Route path="/privacy" element={<Legal title="Privacy Policy" />} />
           <Route path="/login" element={<Login />} />
         </Routes>
       </Suspense>

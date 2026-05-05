@@ -1,6 +1,6 @@
 .compliance-score {
   background: var(--color-navy-dark);
-  color: var(--color-white);
+  color: var(--color-fixed-white);
 }
 
 .compliance-grid {

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Check } from 'phosphor-react';
 import Button from '../common/Button';
+import ScrollReveal from '../common/ScrollReveal';
 import './PricingTeaser.css';
 
 const PricingCard = ({ name, forLabel, price, features, isPopular }) => (
@@ -55,14 +56,18 @@ const PricingTeaser = () => {
   return (
     <section className="pricing-teaser section-padding">
       <div className="container">
-        <div className="section-header">
-          <span className="eyebrow eyebrow-light">PRICING</span>
-          <h2 className="section-title">Simple plans for every stage of your business.</h2>
-        </div>
+        <ScrollReveal>
+          <div className="section-header">
+            <span className="eyebrow eyebrow-light">PRICING</span>
+            <h2 className="section-title">Simple plans for every stage of your business.</h2>
+          </div>
+        </ScrollReveal>
 
         <div className="pricing-grid">
           {plans.map((plan, i) => (
-            <PricingCard key={i} {...plan} />
+            <ScrollReveal key={i} delay={i * 0.1}>
+              <PricingCard {...plan} />
+            </ScrollReveal>
           ))}
         </div>
 

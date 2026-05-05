@@ -115,7 +115,7 @@
 .sub-value {
   font-size: var(--text-base);
   font-weight: 700;
-  color: var(--color-white);
+  color: var(--color-fixed-white);
 }
 
 .wallet-progress-section {

@@ -1,4 +1,4 @@
-import React, { Suspense, lazy } from 'react';
+import React, { Suspense, lazy, useEffect } from 'react';
 import Navbar from '../components/layout/Navbar';
 import Hero from '../components/home/Hero';
 import UrgencyBanner from '../components/home/UrgencyBanner';
@@ -17,8 +17,13 @@ import PricingTeaser from '../components/home/PricingTeaser';
 import FAQTeaser from '../components/home/FAQTeaser';
 import FinalCTA from '../components/home/FinalCTA';
 import Footer from '../components/layout/Footer';
+import SupportWidget from '../components/layout/SupportWidget';
 
 const Home = () => {
+  useEffect(() => {
+    document.title = "Taaxbro | Nigeria's Intelligent Tax & Compliance Platform";
+  }, []);
+
   return (
     <div className="page-home">
       <Navbar />
@@ -41,6 +46,7 @@ const Home = () => {
         <FinalCTA />
       </main>
       <Footer />
+      <SupportWidget />
     </div>
   );
 };

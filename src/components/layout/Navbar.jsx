@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { List, X, ArrowRight } from 'phosphor-react';
+import { List, X, ArrowRight, Sun, Moon, Flame } from 'phosphor-react';
 import Logo from './Logo';
 import Button from '../common/Button';
+import { useTheme } from '../../context/ThemeContext';
 import './Navbar.css';
 
 const Navbar = () => {
@@ -19,6 +20,16 @@ const Navbar = () => {
   }, []);
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+
+  const { theme, cycleTheme } = useTheme();
+
+  const themeIcon = theme === 'light' ? <Moon size={20} /> 
+                 : theme === 'dark'  ? <Flame size={20} /> 
+                 : <Sun size={20} />;
+
+  const themeLabel = theme === 'light' ? 'Switch to Dark' 
+                   : theme === 'dark'  ? 'Switch to Warm' 
+                   : 'Switch to Light';
 
   const isHomePage = location.pathname === '/';
   const logoVariant = isScrolled ? 'dark' : (isHomePage ? 'light' : 'dark');
@@ -40,6 +51,14 @@ const Navbar = () => {
         </div>
 
         <div className="nav-actions desktop-only">
+          <button
+            className="theme-toggle"
+            onClick={cycleTheme}
+            aria-label={themeLabel}
+            title={themeLabel}
+          >
+            {themeIcon}
+          </button>
           <Link to="/login" className={navLinkClass}>Log In</Link>
           <Button variant="primary" size="small" icon={ArrowRight}>
             Get Started Free
@@ -67,6 +86,14 @@ const Navbar = () => {
           <Link to="/about" className="drawer-link" onClick={toggleMenu}>About</Link>
           
           <div className="drawer-actions">
+            <button
+              className="theme-toggle"
+              style={{ marginBottom: '20px', width: 'auto', padding: '0 20px' }}
+              onClick={cycleTheme}
+              aria-label={themeLabel}
+            >
+              {themeIcon} <span style={{marginLeft: '12px', fontSize: '14px'}}>{themeLabel}</span>
+            </button>
             <Link to="/login" className="drawer-link" onClick={toggleMenu}>Log In</Link>
             <Button variant="primary" icon={ArrowRight} style={{ width: '100%' }}>
               Get Started Free

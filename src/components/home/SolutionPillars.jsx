@@ -1,63 +1,66 @@
 import React, { useState } from 'react';
 import { CreditCard, FileText, BookOpen, Check } from 'phosphor-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import ScrollReveal from '../common/ScrollReveal';
 import './SolutionPillars.css';
+
+const pillars = [
+  {
+    id: 'pay',
+    icon: CreditCard,
+    name: "Taaxbro Pay",
+    accent: "var(--color-blue-primary)",
+    pitch: "Accept payments, reconcile income, and never miss a transfer again.",
+    features: [
+      "Accept payments from bank transfers, POS, and fintech wallets",
+      "Generate shareable payment links for any customer",
+      "Auto-reconcile: when payment arrives, invoice marks itself paid",
+      "Instant WhatsApp alert the moment a customer pays"
+    ],
+    visualType: 'transactions'
+  },
+  {
+    id: 'tax',
+    icon: FileText,
+    name: "Taaxbro Tax",
+    accent: "var(--color-cyan)",
+    pitch: "VAT, WHT, CIT, PIT, and more — computed automatically, filed with your approval.",
+    features: [
+      "Real-time tax liability computation as transactions happen",
+      "Human-supervised filing: we prepare, you approve, we file",
+      "Connects directly to NRS, LIRS, RIRS, and FCT-IRS",
+      "Deadline calendar so you are never caught off guard"
+    ],
+    visualType: 'tax-overview'
+  },
+  {
+    id: 'books',
+    icon: BookOpen,
+    name: "Taaxbro Books",
+    accent: "#8B5CF6", // violet
+    pitch: "Professional invoicing, real-time bookkeeping, and instant P&L — without an accountant.",
+    features: [
+      "Generate standard or QR-code invoices in under a minute",
+      "Scan any receipt with your phone camera — AI records the expense",
+      "Auto-generated Profit & Loss and Balance Sheet reports",
+      "Track income, expenses, and outstanding invoices in real time"
+    ],
+    visualType: 'invoice'
+  }
+];
 
 const SolutionPillars = () => {
   const [activeTab, setActiveTab] = useState(0);
 
-  const pillars = [
-    {
-      id: 'pay',
-      icon: CreditCard,
-      name: "Taaxbro Pay",
-      accent: "var(--color-blue-primary)",
-      pitch: "Accept payments, reconcile income, and never miss a transfer again.",
-      features: [
-        "Accept payments from bank transfers, POS, and fintech wallets",
-        "Generate shareable payment links for any customer",
-        "Auto-reconcile: when payment arrives, invoice marks itself paid",
-        "Instant WhatsApp alert the moment a customer pays"
-      ],
-      visualType: 'transactions'
-    },
-    {
-      id: 'tax',
-      icon: FileText,
-      name: "Taaxbro Tax",
-      accent: "var(--color-cyan)",
-      pitch: "VAT, WHT, CIT, PIT, and more — computed automatically, filed with your approval.",
-      features: [
-        "Real-time tax liability computation as transactions happen",
-        "Human-supervised filing: we prepare, you approve, we file",
-        "Connects directly to NRS, LIRS, RIRS, and FCT-IRS",
-        "Deadline calendar so you are never caught off guard"
-      ],
-      visualType: 'tax-overview'
-    },
-    {
-      id: 'books',
-      icon: BookOpen,
-      name: "Taaxbro Books",
-      accent: "#8B5CF6", // violet
-      pitch: "Professional invoicing, real-time bookkeeping, and instant P&L — without an accountant.",
-      features: [
-        "Generate standard or QR-code invoices in under a minute",
-        "Scan any receipt with your phone camera — AI records the expense",
-        "Auto-generated Profit & Loss and Balance Sheet reports",
-        "Track income, expenses, and outstanding invoices in real time"
-      ],
-      visualType: 'invoice'
-    }
-  ];
-
   return (
     <section className="solution-pillars section-padding">
       <div className="container">
-        <div className="section-header">
-          <span className="eyebrow eyebrow-light">THE PLATFORM</span>
-          <h2 className="section-title">Three pillars. One platform. Total financial control.</h2>
-        </div>
+        <ScrollReveal>
+          <div className="section-header">
+            <span className="eyebrow eyebrow-light">THE PLATFORM</span>
+            <h2 className="section-title">Three pillars. One platform. Total financial control.</h2>
+          </div>
+        </ScrollReveal>
 
         <div className="tabs-container desktop-only">
           {pillars.map((pillar, index) => (
@@ -76,7 +79,7 @@ const SolutionPillars = () => {
           ))}
         </div>
 
-        <div className="tab-content-wrapper">
+        <div className="tab-content-wrapper desktop-only">
           <AnimatePresence mode="wait">
             <motion.div 
               key={activeTab}
@@ -162,24 +165,26 @@ const SolutionPillars = () => {
 
         {/* Mobile View - Stacked */}
         <div className="mobile-pillars mobile-only">
-          {pillars.map((pillar) => (
-            <div key={pillar.id} className="mobile-pillar-card">
-              <div className="mobile-pillar-header" style={{ color: pillar.accent }}>
-                <pillar.icon size={32} />
-                <h3>{pillar.name}</h3>
+          {pillars.map((pillar, index) => (
+            <ScrollReveal key={pillar.id} delay={index * 0.1}>
+              <div className="mobile-pillar-card">
+                <div className="mobile-pillar-header" style={{ color: pillar.accent }}>
+                  <pillar.icon size={32} />
+                  <h3>{pillar.name}</h3>
+                </div>
+                <p className="tab-pitch">{pillar.pitch}</p>
+                <ul className="feature-list">
+                  {pillar.features.map((feature, i) => (
+                    <li key={i} className="feature-item">
+                      <div className="check-icon" style={{ background: `${pillar.accent}20`, color: pillar.accent }}>
+                        <Check size={16} weight="bold" />
+                      </div>
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
-              <p className="tab-pitch">{pillar.pitch}</p>
-              <ul className="feature-list">
-                {pillar.features.map((feature, i) => (
-                  <li key={i} className="feature-item">
-                    <div className="check-icon" style={{ background: `${pillar.accent}20`, color: pillar.accent }}>
-                      <Check size={16} weight="bold" />
-                    </div>
-                    <span>{feature}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+            </ScrollReveal>
           ))}
         </div>
       </div>

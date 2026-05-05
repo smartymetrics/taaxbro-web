@@ -1,6 +1,6 @@
 .whatsapp-integration {
   background: linear-gradient(160deg, #0A2A1E 0%, #0D3A2A 100%);
-  color: var(--color-white);
+  color: var(--color-fixed-white);
 }
 
 .whatsapp-eyebrow {
@@ -63,7 +63,7 @@
 .wa-avatar {
   width: 36px;
   height: 36px;
-  background: var(--color-white);
+  background: var(--color-fixed-white);
   border-radius: 50%;
 }
 

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { CaretDown } from 'phosphor-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import ScrollReveal from '../common/ScrollReveal';
 import './FAQTeaser.css';
 
 const AccordionItem = ({ question, answer }) => {
@@ -51,14 +52,18 @@ const FAQTeaser = () => {
   return (
     <section className="faq-teaser section-padding">
       <div className="container">
-        <div className="section-header">
-          <span className="eyebrow eyebrow-light">COMMON QUESTIONS</span>
-          <h2 className="section-title">Quick answers to what businesses ask us most.</h2>
-        </div>
+        <ScrollReveal>
+          <div className="section-header">
+            <span className="eyebrow eyebrow-light">COMMON QUESTIONS</span>
+            <h2 className="section-title">Quick answers to what businesses ask us most.</h2>
+          </div>
+        </ScrollReveal>
 
         <div className="faq-list">
           {faqs.map((faq, i) => (
-            <AccordionItem key={i} {...faq} />
+            <ScrollReveal key={i} delay={i * 0.1}>
+              <AccordionItem {...faq} />
+            </ScrollReveal>
           ))}
         </div>
 

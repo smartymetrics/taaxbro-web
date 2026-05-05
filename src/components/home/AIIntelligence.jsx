@@ -1,5 +1,6 @@
 import React from 'react';
 import { Brain, Calculator, ChatsCircle, ShieldWarning } from 'phosphor-react';
+import ScrollReveal from '../common/ScrollReveal';
 import './AIIntelligence.css';
 
 const AICapabilityCard = ({ icon: Icon, title, description }) => (
@@ -39,54 +40,60 @@ const AIIntelligence = () => {
   return (
     <section className="ai-intelligence section-padding">
       <div className="container">
-        <div className="section-header">
-          <span className="eyebrow eyebrow-dark">INTELLIGENT AUTOMATION</span>
-          <h2 className="section-title white">The AI that works inside your business, around the clock.</h2>
-        </div>
+        <ScrollReveal>
+          <div className="section-header">
+            <span className="eyebrow eyebrow-dark">INTELLIGENT AUTOMATION</span>
+            <h2 className="section-title white">The AI that works inside your business, around the clock.</h2>
+          </div>
+        </ScrollReveal>
 
         <div className="ai-grid">
           <div className="ai-capabilities">
             {capabilities.map((cap, i) => (
-              <AICapabilityCard key={i} {...cap} />
+              <ScrollReveal key={i} delay={i * 0.1}>
+                <AICapabilityCard {...cap} />
+              </ScrollReveal>
             ))}
           </div>
 
-          <div className="ai-chat-mockup">
-            <div className="chat-panel card-dark">
-              <div className="chat-header">
-                <div className="chat-avatar"></div>
-                <div className="chat-info">
-                  <div className="chat-name">Taaxbro AI</div>
-                  <div className="chat-status">Online</div>
-                </div>
-              </div>
-              <div className="chat-body">
-                <div className="message user">
-                  <div className="message-bubble">
-                    Am I supposed to charge VAT on my consulting services?
+          <ScrollReveal direction="left" delay={0.3}>
+            <div className="ai-chat-mockup">
+              <div className="chat-panel card-dark">
+                <div className="chat-header">
+                  <div className="chat-avatar"></div>
+                  <div className="chat-info">
+                    <div className="chat-name">Taaxbro AI</div>
+                    <div className="chat-status">Online</div>
                   </div>
                 </div>
-                <div className="message ai">
-                  <div className="message-bubble">
-                    Yes — consulting services are VAT-applicable under the Nigeria Tax Act 2025. Since your annual turnover exceeds ₦25M, you are required to charge and remit 7.5% VAT on every invoice.
+                <div className="chat-body">
+                  <div className="message user">
+                    <div className="message-bubble">
+                      Am I supposed to charge VAT on my consulting services?
+                    </div>
+                  </div>
+                  <div className="message ai">
+                    <div className="message-bubble">
+                      Yes — consulting services are VAT-applicable under the Nigeria Tax Act 2025. Since your annual turnover exceeds ₦25M, you are required to charge and remit 7.5% VAT on every invoice.
+                    </div>
+                  </div>
+                  <div className="message user">
+                    <div className="message-bubble">
+                      What about my international clients?
+                    </div>
+                  </div>
+                  <div className="message ai">
+                    <div className="message-bubble">
+                      Services exported to clients outside Nigeria are zero-rated for VAT, meaning you charge 0% — but you must still file and declare them. I can prepare your next VAT return with this distinction already applied.
+                    </div>
                   </div>
                 </div>
-                <div className="message user">
-                  <div className="message-bubble">
-                    What about my international clients?
-                  </div>
+                <div className="chat-input">
+                  <span>Ask a tax question...</span>
                 </div>
-                <div className="message ai">
-                  <div className="message-bubble">
-                    Services exported to clients outside Nigeria are zero-rated for VAT, meaning you charge 0% — but you must still file and declare them. I can prepare your next VAT return with this distinction already applied.
-                  </div>
-                </div>
-              </div>
-              <div className="chat-input">
-                <span>Ask a tax question...</span>
               </div>
             </div>
-          </div>
+          </ScrollReveal>
         </div>
       </div>
     </section>

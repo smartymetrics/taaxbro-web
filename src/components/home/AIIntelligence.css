@@ -1,10 +1,10 @@
 .ai-intelligence {
   background: var(--color-navy-dark);
-  color: var(--color-white);
+  color: var(--color-fixed-white);
 }
 
 .section-title.white {
-  color: var(--color-white);
+  color: var(--color-fixed-white);
 }
 
 .ai-grid {
@@ -42,7 +42,7 @@
 .ai-card-title {
   font-size: var(--text-lg);
   font-weight: 700;
-  color: var(--color-white);
+  color: var(--color-fixed-white);
 }
 
 .ai-card-desc {
@@ -122,13 +122,13 @@
 
 .user .message-bubble {
   background: var(--color-blue-primary);
-  color: var(--color-white);
+  color: var(--color-fixed-white);
   border-bottom-right-radius: 4px;
 }
 
 .ai .message-bubble {
   background: rgba(255, 255, 255, 0.1);
-  color: var(--color-white);
+  color: var(--color-fixed-white);
   border-bottom-left-radius: 4px;
 }
 

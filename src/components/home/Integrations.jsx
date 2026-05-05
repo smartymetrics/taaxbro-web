@@ -1,4 +1,5 @@
 import React from 'react';
+import ScrollReveal from '../common/ScrollReveal';
 import './Integrations.css';
 
 const IntegrationLogo = ({ name }) => (
@@ -14,11 +15,13 @@ const Integrations = () => {
   return (
     <section className="integrations section-padding">
       <div className="container">
-        <div className="section-header">
-          <span className="eyebrow eyebrow-light">INTEGRATIONS</span>
-          <h2 className="section-title">Taaxbro plugs into the tools your business already uses.</h2>
-          <p className="section-subtitle">Connect once — and keep all your financial tools talking to each other.</p>
-        </div>
+        <ScrollReveal>
+          <div className="section-header">
+            <span className="eyebrow eyebrow-light">INTEGRATIONS</span>
+            <h2 className="section-title">Taaxbro plugs into the tools your business already uses.</h2>
+            <p className="section-subtitle">Connect once — and keep all your financial tools talking to each other.</p>
+          </div>
+        </ScrollReveal>
       </div>
 
       <div className="marquee-wrapper">
