@@ -46,7 +46,29 @@ const FAQPage = () => {
     {
       category: "Payments",
       questions: [
-        { q: "Which Nigerian banks are supported?", a: "We support all major commercial banks, including GTBank, Access, Zenith, UBA, and fintechs like Kuda and Moniepoint." }
+        { q: "Which Nigerian banks are supported?", a: "We support all major commercial banks, including GTBank, Access, Zenith, UBA, and fintechs like Kuda and Moniepoint." },
+        { q: "How fast are Taaxbro Pay settlements?", a: "Settlements are processed in near real-time, ensuring your business maintains healthy cash flow without the typical 24-hour wait." }
+      ]
+    },
+    {
+      category: "Tax Compliance",
+      questions: [
+        { q: "Does Taaxbro handle VAT and WHT?", a: "Yes, Taaxbro automatically computes and prepares schedules for VAT, Withholding Tax (WHT), and Corporate Income Tax based on your transaction history." },
+        { q: "Is the 2025 Tax Reform Act integrated?", a: "Absolutely. We stay up-to-date with Nigerian tax laws, including the transition to the NRS and the latest e-invoicing requirements." }
+      ]
+    },
+    {
+      category: "WhatsApp",
+      questions: [
+        { q: "How do I log expenses via WhatsApp?", a: "Just send a photo of your receipt or type the amount to our secure WhatsApp bot. It uses AI to categorize the expense and sync it to your books instantly." },
+        { q: "Can I generate invoices on WhatsApp?", a: "Yes, you can prompt the bot to create an invoice, and it will send a professional PDF directly to you or your client." }
+      ]
+    },
+    {
+      category: "Accounting",
+      questions: [
+        { q: "Does it connect to my existing bank accounts?", a: "Yes, Taaxbro connects securely to over 20 Nigerian banks to automate your bookkeeping and bank reconciliation." },
+        { q: "Can my external accountant access my data?", a: "Yes, you can invite your accountant to your dedicated Accountant Portal, where they can review your books and finalize filings." }
       ]
     }
   ];
