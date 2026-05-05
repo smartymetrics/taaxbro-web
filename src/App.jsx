@@ -1,4 +1,4 @@
-import React, { Suspense, lazy } from 'react';
+import React, { Suspense, lazy, useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './index.css';
 import LoadingScreen from './components/common/LoadingScreen';
@@ -25,6 +25,20 @@ const PlaceholderPage = ({ title }) => (
 const Login = () => <PlaceholderPage title="Login" />;
 
 function App() {
+  const [showSplash, setShowSplash] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowSplash(false);
+    }, 1000); // 1 second minimum splash
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (showSplash) {
+    return <LoadingScreen />;
+  }
+
   return (
     <Router>
       <Suspense fallback={<LoadingScreen />}>
