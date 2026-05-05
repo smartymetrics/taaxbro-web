@@ -1,6 +1,7 @@
 import React, { Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './index.css';
+import LoadingScreen from './components/common/LoadingScreen';
 
 const Home = lazy(() => import('./pages/Home'));
 const Features = lazy(() => import('./pages/FeaturesPage'));
@@ -25,7 +26,7 @@ const Login = () => <PlaceholderPage title="Login" />;
 function App() {
   return (
     <Router>
-      <Suspense fallback={<div className="loading-screen">Loading Taaxbro...</div>}>
+      <Suspense fallback={<LoadingScreen />}>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/product" element={<Features />} />

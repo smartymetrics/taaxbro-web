@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { List, X, ArrowRight } from 'phosphor-react';
 import Logo from './Logo';
 import Button from '../common/Button';
 import './Navbar.css';
 
 const Navbar = () => {
+  const location = useLocation();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -19,23 +20,27 @@ const Navbar = () => {
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
+  const isHomePage = location.pathname === '/';
+  const logoVariant = isScrolled ? 'dark' : (isHomePage ? 'light' : 'dark');
+  const navLinkClass = `nav-link ${(!isScrolled && isHomePage) ? 'light' : 'dark'}`;
+
   return (
-    <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
+    <nav className={`navbar ${isScrolled ? 'scrolled' : ''} ${!isHomePage ? 'not-home' : ''}`}>
       <div className="container nav-container">
         <Link to="/" className="nav-logo">
-          <Logo variant={isScrolled ? 'dark' : 'light'} />
+          <Logo variant={logoVariant} />
         </Link>
 
         <div className="nav-links desktop-only">
-          <Link to="/product" className="nav-link">Product</Link>
-          <Link to="/pricing" className="nav-link">Pricing</Link>
-          <Link to="/accountants" className="nav-link">For Accountants</Link>
-          <Link to="/blog" className="nav-link">Blog</Link>
-          <Link to="/about" className="nav-link">About</Link>
+          <Link to="/product" className={navLinkClass}>Product</Link>
+          <Link to="/pricing" className={navLinkClass}>Pricing</Link>
+          <Link to="/accountants" className={navLinkClass}>For Accountants</Link>
+          <Link to="/blog" className={navLinkClass}>Blog</Link>
+          <Link to="/about" className={navLinkClass}>About</Link>
         </div>
 
         <div className="nav-actions desktop-only">
-          <Link to="/login" className="nav-link">Log In</Link>
+          <Link to="/login" className={navLinkClass}>Log In</Link>
           <Button variant="primary" size="small" icon={ArrowRight}>
             Get Started Free
           </Button>
